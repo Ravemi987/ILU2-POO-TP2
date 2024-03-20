@@ -21,6 +21,8 @@ public class BoundaryPrendreEtal {
 			boolean etalDisponible = controlPrendreEtal.resteEtals();
 			if (!etalDisponible) {
 				System.out.println("Désolée " + nomVendeur + " je n'ai plus d'étal qui ne soit pas déjà occupé.");
+			} else if (controlPrendreEtal.estDejaVendeur(nomVendeur)) {
+				System.out.println("Je suis désolée " + nomVendeur + " mais vous occupez déjà un étal !");
 			} else {
 				installerVendeur(nomVendeur);
 			}
@@ -36,7 +38,7 @@ public class BoundaryPrendreEtal {
 		int numeroEtal = controlPrendreEtal.prendreEtal(nomVendeur, produit, nbProduit);
 		
 		if (numeroEtal != -1) {
-			System.out.println("Le vendeur " + nomVendeur + " s'est installé à l'étal n°" + numeroEtal+1);
+			System.out.println("Le vendeur " + nomVendeur + " s'est installé à l'étal n°" + (numeroEtal+1));
 		}
 	}
 }

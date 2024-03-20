@@ -18,10 +18,13 @@ public class ControlAcheterProduit {
 	}
 
 	public String[] getVendeursProduit(String produit) {
+		String[] nomsVendeurs = null;
 		Gaulois[] vendeurs = village.rechercherVendeursProduit(produit);
-		String[] nomsVendeurs = new String[vendeurs.length];
-		for (int i = 0; i < nomsVendeurs.length; i++) {
-			nomsVendeurs[i] = vendeurs[i].getNom();
+		if (vendeurs != null) {
+			nomsVendeurs = new String[vendeurs.length];
+			for (int i = 0; i < nomsVendeurs.length; i++) {
+				nomsVendeurs[i] = vendeurs[i].getNom();
+			}
 		}
 		return nomsVendeurs;
 	}
