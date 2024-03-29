@@ -1,5 +1,6 @@
 package controleur;
 
+import villagegaulois.Etal;
 import villagegaulois.Village;
 
 public class ControlPrendreEtal {
@@ -22,5 +23,10 @@ public class ControlPrendreEtal {
 
 	public boolean verifierIdentite(String nomVendeur) {
 		return controlVerifierIdentite.verifierIdentite(nomVendeur);
+	}
+
+	public boolean estDejaVendeur(String nomVendeur) {
+		Etal etal = village.rechercherEtal(village.trouverHabitant(nomVendeur));
+		return (etal != null && etal.isEtalOccupe());
 	}
 }
