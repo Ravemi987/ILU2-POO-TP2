@@ -37,7 +37,7 @@ public class BoundaryAcheterProduit {
 				if (quantite == 0) {
 					System.out.println(nomAcheteur + " veut acheter " + nbProduit + " " + produit + ", malheureusement il n'y en a plus !");
 				} else if (quantite < nbProduit) {
-					System.out.println(nomAcheteur + " veut ahchetr " + nbProduit + " " + produit + ", malheureusement " + vendeursProduit[choixUtilisateur]
+					System.out.println(nomAcheteur + " veut acheter " + nbProduit + " " + produit + ", malheureusement " + vendeursProduit[choixUtilisateur]
 							+ " n'en a plus que " + quantite + ". " + nomAcheteur + " achète tout le stock de " + vendeursProduit[choixUtilisateur] + ".");
 				} else {
 					System.out.println(nomAcheteur + " achète " + nbProduit + " à " + vendeursProduit[choixUtilisateur] + ".");
