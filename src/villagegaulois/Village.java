@@ -76,6 +76,9 @@ public class Village {
 	 */
 	public int installerVendeur(Gaulois vendeur, String produit,
 			int nbProduit) {
+		if (vendeur == null) {
+			return -1;
+		}
 		int indiceEtal = marche.trouverEtalLibre();
 		if (indiceEtal >= 0) {
 			marche.utiliserEtal(indiceEtal, vendeur, produit, nbProduit);
@@ -127,8 +130,10 @@ public class Village {
 
 		private void utiliserEtal(int indiceEtal, Gaulois vendeur,
 				String produit, int nbProduit) {
-			if (indiceEtal >= 0 && indiceEtal < etals.length) {
-				etals[indiceEtal].occuperEtal(vendeur, produit, nbProduit);
+			if (vendeur != null) {
+				if (indiceEtal >= 0 && indiceEtal < etals.length) {
+					etals[indiceEtal].occuperEtal(vendeur, produit, nbProduit);
+				}
 			}
 		}
 
